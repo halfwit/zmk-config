@@ -33,7 +33,7 @@
         selection_encoder: selection_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&kp LS(DOWN)>, <&kp LS(UP)>;
+            bindings = <&kp LEFT_WIN(LS(LEFT))>, <&kp LEFT_WIN(LS(RIGHT))>;
         };
         scroll_encoder: scroll_encoder {
 	        compatible = "zmk,behavior-sensor-rotate";
