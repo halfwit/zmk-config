@@ -50,14 +50,14 @@
 &kp Y           &kp W           &kp F           &kp L           &kp M                           &kp K           &kp P           &kp O           &kp Q           &kp SINGLE_QUOTE
 &kp U           &kp R           &mt LCTRL S     &mt LWIN N      &kp H                           &kp D           &mt LWIN T      &mt RCTRL E     &kp A           &kp I
 &kp Z           &kp X           &kp C           &kp V           &kp J                           &kp B           &kp G           &kp COMMA       &kp DOT         &kp SEMI
-&lt RAISE BSPC                                  &lt LOWER SPACE &mt LALT TAB    &mt LSHFT DEL   &lt LOWER HOME                                                  &lt RAISE RET
+&lt RAISE BSPC                                  &lt LOWER SPACE &mt LALT TAB    &mt LSHFT INS   &lt LOWER HOME                                                  &lt RAISE RET
             >;
             sensor-bindings = <&window_encoder>;
         };
 
         LOWER {
             bindings = <
-&kp ESC         &kp AT          &kp POUND       &kp DOLLAR      &kp PRCNT                       &kp CARET       &kp AMPS        &kp ASTRK       &kp SEMI        &kp BSPC
+&kp ESC         &kp AT          &kp POUND       &kp DOLLAR      &kp PRCNT                       &kp CARET       &kp AMPS        &kp ASTRK       &kp SEMI        &kp DEL
 &kp TAB         &kp LPAR        &mt LCTRL LBRC  &mt LWIN FSLH   &kp LT                          &kp GT          &mt LWIN BSLH   &mt RCTRL RBRC  &kp RPAR        &kp ENTER
 &kp INS         &kp PIPE        &kp MINUS       &kp LBKT        &kp EXCL                        &kp QMARK       &kp RBKT        &kp EQUAL       &kp GRAVE       &kp RALT
 &kp BSPC                                        &to DEFAULT     &kp RALT        &kp RSHFT       &to LOWER                                                       &kp RET
