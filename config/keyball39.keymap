@@ -33,7 +33,7 @@
         selection_encoder: window_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&kp LG(LEFT)>, <&kp LG(RIGHT)>;
+            bindings = <&kp LEFT>, <&kp RIGHT>;
         };
         scroll_encoder: scroll_encoder {
 	        compatible = "zmk,behavior-sensor-rotate";
@@ -53,7 +53,7 @@
 &kp Z           &kp X           &kp C           &kp V           &kp J                           &kp B           &kp G           &kp COMMA       &kp DOT         &kp SEMI
 &lt RAISE BSPC                                  &lt LOWER SPACE &mt LALT TAB    &mt LSHFT DEL   &lt LOWER HOME                                                  &lt RAISE RET
             >;
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&window_encoder>;
         };
 
         LOWER {
@@ -63,7 +63,7 @@
 &kp INS         &kp PIPE        &kp MINUS       &kp LBKT        &kp EXCL                        &kp QMARK       &kp RBKT        &kp EQUAL       &kp GRAVE       &kp RALT
 &kp BSPC                                        &to DEFAULT     &kp RALT        &kp RSHFT       &to LOWER                                                       &kp RET
             >;
-            sensor-bindings = <&window_encoder>;
+            sensor-bindings = <&scroll_encoder>;
         };
 
         RAISE {
