@@ -48,8 +48,8 @@
         default_layer {
             bindings = < 
 &kp Y           &kp W           &kp F           &kp L           &kp M                           &kp K           &kp P           &kp O           &kp Q           &kp SINGLE_QUOTE
-&kp U           &kp R           &mt LCTRL S     &mt LWIN N      &kp H                           &kp D           &mt LWIN T      &mt RCTRL E     &kp A           &kp I
-&kp Z           &kp X           &kp C           &kp V           &kp J                           &kp B           &kp G           &kp COMMA       &kp DOT         &kp SEMI
+&kp U           &kp R           &kp S           &kp N           &kp H                           &kp D           &kp T           &kp E           &kp A           &kp I
+&kp Z           &kp X           &mt LCTRL C     &kp LWIN V      &kp J                           &kp B           &mt LWIN G      &mt RCTRL COMMA &kp DOT 
 &lt RAISE BSPC                                  &lt LOWER SPACE &mt LALT TAB    &mt LSHFT INS   &lt LOWER HOME                                                  &lt RAISE RET
             >;
             sensor-bindings = <&window_encoder>;
@@ -70,7 +70,7 @@
 &kp ASTRK       &kp N7          &kp N8          &kp N9          &kp MINUS                       &kp C_VOL_UP    &kp PAGE_UP     &kp UP          &kp PAGE_DOWN   &kp C_PREV
 &kp FSLH        &kp N4          &kp N5          &kp N6          &kp PLUS                        &kp C_MUTE      &kp LEFT        &kp DOWN        &kp RIGHT       &kp C_PP
 &kp DOT         &kp N1          &kp N2          &kp N3          &kp ENTER                       &kp C_VOL_DN    &mkp LCLK       &mkp MCLK       &mkp RCLK       &kp C_NEXT
-&kp N0                                          &to DEFAULT     &bootloader     &bt BT_DISC 0   &to RAISE                                                       &soft_off
+&kp N0                                          &to DEFAULT     &bootloader     &to GAME        &to RAISE                                                       &soft_off
             >;
             sensor-bindings = <&volume_encoder>;
         };
