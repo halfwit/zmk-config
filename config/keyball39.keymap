@@ -49,7 +49,7 @@
             bindings = < 
 &kp Y           &kp W           &kp F           &kp L           &kp M                           &kp K           &kp P           &kp O           &kp Q           &kp SINGLE_QUOTE
 &kp U           &kp R           &kp S           &kp N           &kp H                           &kp D           &kp T           &kp E           &kp A           &kp I
-&kp Z           &kp X           &mt LCTRL C     &kp LWIN V      &kp J                           &kp B           &mt LWIN G      &mt RCTRL COMMA &kp DOT 
+&kp Z           &kp X           &mt LCTRL C     &mt LWIN V      &kp J                           &kp B           &mt LWIN G      &mt RCTRL COMMA &kp DOT 
 &lt RAISE BSPC                                  &lt LOWER SPACE &mt LALT TAB    &mt LSHFT INS   &lt LOWER HOME                                                  &lt RAISE RET
             >;
             sensor-bindings = <&window_encoder>;
