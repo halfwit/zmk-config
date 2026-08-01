@@ -1,2 +1,6 @@
 board: [ "nice_nano//zmk" ]
 shield: [ "keyball39_left", "keyball39_right", "settings_reset" ]
+include:
+  - board: nice_nano//zmk
+    shield: corne_left
+    snippet: zmk-usb-logging
