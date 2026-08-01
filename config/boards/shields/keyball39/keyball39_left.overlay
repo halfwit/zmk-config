@@ -3,4 +3,15 @@
 
 &bottom_encoder {
     status = "okay";
+    compatible = "alps,ec11";
+    a-gpios = <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    b-gpios = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    steps = <30>;
+    status = "disabled";
+};
+
+&sensors {
+    compatible = "zmk,keymap-sensors";
+    sensors = <&bottom_encoder>;
+    triggers-per-rotation = <15>;
 };
