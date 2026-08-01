@@ -1,2 +1,2 @@
-board: [ "nice_nano" ]
+board: [ "nice_nano//zmk" ]
 shield: [ "keyball39_left", "keyball39_right", "settings_reset" ]
