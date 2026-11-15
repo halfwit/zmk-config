@@ -9,24 +9,17 @@
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 8)>,    // <-- REPLACE with your SCK nRF GPIO
-                    <NRF_PSEL(SPIM_MOSI, 0, 10)>;  // <-- REPLACE with your MOSI (SDIO out) nRF GPIO
-        };
-        group2 {
-            psels = <NRF_PSEL(SPIM_MISO, 1, 12)>;  // <-- REPLACE with your MISO (SDIO in) nRF GPIO
-            input-enable;
+            psels = <NRF_PSEL(SPIM_SCK, 0, 8)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 10)>;
+                    <NRF_PSEL(SPIM_MISO, 1, 12)>;
         };
     };
 
     spi0_sleep: spi0_sleep {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 8)>,    // <-- REPLACE (same pins as spi0_default)
-                    <NRF_PSEL(SPIM_MOSI, 0, 10)>;  // <-- REPLACE
-            low-power-enable;
-        };
-        group2 {
-            psels = <NRF_PSEL(SPIM_MISO, 1, 12)>;  // <-- REPLACE
-            input-enable;
+            psels = <NRF_PSEL(SPIM_SCK, 0, 8)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 10)>;
+                    <NRF_PSEL(SPIM_MISO, 1, 12)>;
             low-power-enable;
         };
     };
