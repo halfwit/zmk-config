@@ -1,21 +1,19 @@
 // zmk/app/boards/shields/keyball39/keyball39_left.overlay
 #include "keyball39.dtsi"
 
-&default_transform { // The matrix transform for this board is 4 rows over because the left half is 4 rows tall according to the matrix.
-    row-offset = <4>;
-};
 
-&bottom_encoder {
-    status = "okay";
-    compatible = "alps,ec11";
-    a-gpios = <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    b-gpios = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    steps = <30>;
-    status = "disabled";
-};
+/ {
+    bottom_encoder: encoder_bottom {
+        compatible = "alps,ec11";
+        a-gpios = <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <30>;
+        status = "okay";
+    };
 
-&sensors {
-    compatible = "zmk,keymap-sensors";
-    sensors = <&bottom_encoder>;
-    triggers-per-rotation = <15>;
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&bottom_encoder>;
+        triggers-per-rotation = <15>;
+    };
 };
