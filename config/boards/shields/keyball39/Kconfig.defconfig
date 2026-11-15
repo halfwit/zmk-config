@@ -5,6 +5,12 @@ if SHIELD_KEYBALL39_RIGHT
 
     config ZMK_SPLIT_ROLE_CENTRAL
         default y
+    
+    config ZMK_POINTING
+        default y
+
+    config SPI
+        default y
 
 endif
 
