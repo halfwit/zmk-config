@@ -7,7 +7,7 @@
 };
 
 &pinctrl {
-    spi0_default: spi0_default {
+    keyball_spi_default: keyball_spi_default {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
                     <NRF_PSEL(SPIM_MOSI, 0, 10)>;
@@ -18,7 +18,7 @@
         };
     };
 
-    spi0_sleep: spi0_sleep {
+    keyball_spi_sleep: keyball_spi_sleep {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
                     <NRF_PSEL(SPIM_MOSI, 0, 10)>,
@@ -28,11 +28,11 @@
     };
 };
 
-&spi0 {
+&spi1 {
     compatible = "nordic,nrf-spim";
     status = "okay";
-    pinctrl-0 = <&spi0_default>;
-    pinctrl-1 = <&spi0_sleep>;
+    pinctrl-0 = <&keyball_spi_default>;
+    pinctrl-1 = <&keyball_spi_sleep>;
     pinctrl-names = "default", "sleep";
     cs-gpios = <&pro_micro 10 GPIO_ACTIVE_LOW>;
     mouse: mouse@0 {
@@ -41,6 +41,8 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         cpi = <600>;
+        spi-cpol;
+        spi-cpha;
         // Recommended: wire the PMW3360 MOTION pin to a spare GPIO and add
         // irq-gpios here to leave polled mode. Example:
         // irq-gpios = <&pro_micro X (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
