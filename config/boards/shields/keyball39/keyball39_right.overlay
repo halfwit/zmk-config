@@ -1,20 +1,53 @@
 // zmk/app/boards/shields/keyball39/keyball39_right.overlay
 #include "keyball39.dtsi"
+#include <nrf/pinctrl.h>
 
 &default_transform { // The matrix transform for this board is 4 rows over because the left half is 4 rows tall according to the matrix.
     row-offset = <4>;
 };
 
-&spi0 {
-    status = "okay";
-    cs-gpios = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+&pinctrl {
+    spi0_default: spi0_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 8)>,    // <-- REPLACE with your SCK nRF GPIO
+                    <NRF_PSEL(SPIM_MOSI, 0, 10)>;  // <-- REPLACE with your MOSI (SDIO out) nRF GPIO
+        };
+        group2 {
+            psels = <NRF_PSEL(SPIM_MISO, 1, 12)>;  // <-- REPLACE with your MISO (SDIO in) nRF GPIO
+            input-enable;
+        };
+    };
 
+    spi0_sleep: spi0_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 8)>,    // <-- REPLACE (same pins as spi0_default)
+                    <NRF_PSEL(SPIM_MOSI, 0, 10)>;  // <-- REPLACE
+            low-power-enable;
+        };
+        group2 {
+            psels = <NRF_PSEL(SPIM_MISO, 1, 12)>;  // <-- REPLACE
+            input-enable;
+            low-power-enable;
+        };
+    };
+};
+
+&spi0 {
+    compatible = "nordic,nrf-spim";
+    status = "okay";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
+    pinctrl-names = "default", "sleep";
+    cs-gpios = <&pro_micro 10 GPIO_ACTIVE_LOW>;
     mouse: mouse@0 {
         compatible = "pixart,pmw3360";
         status = "okay";
         reg = <0>;
         spi-max-frequency = <2000000>;
         cpi = <600>;
+        // Recommended: wire the PMW3360 MOTION pin to a spare GPIO and add
+        // irq-gpios here to leave polled mode. Example:
+        // irq-gpios = <&pro_micro X (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
 };
 

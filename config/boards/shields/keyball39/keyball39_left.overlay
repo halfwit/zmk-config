@@ -1,6 +1,10 @@
 // zmk/app/boards/shields/keyball39/keyball39_left.overlay
 #include "keyball39.dtsi"
 
+&default_transform { // The matrix transform for this board is 4 rows over because the left half is 4 rows tall according to the matrix.
+    row-offset = <4>;
+};
+
 &bottom_encoder {
     status = "okay";
     compatible = "alps,ec11";
